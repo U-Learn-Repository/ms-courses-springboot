@@ -1,0 +1,209 @@
+openapi: 3.0.0
+info:
+  title: API_U_LEARN
+  contact: {}
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8082/curso'
+    variables: {}
+paths:
+  /registro:
+    post:
+      tags:
+        - Misc
+      summary: Registrar curso
+      description: Servicio para registrar un curso nuevo
+      operationId: Create_Curso
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Create_Curso_Request'
+            example:
+              nombre: Fisica
+              categoria: Videos cortos
+              duracion: 25
+              nombreProfesor: Juan Carlos
+              calificacion: 4.2
+        required: true
+        x-send-file-in-body: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /consulta:
+    get:
+      tags:
+        - Misc
+      summary: Listar TODOS los cursos
+      description: Servicio para listar TODOS los cursos
+      operationId: Consulta
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /consultacategoria:
+    post:
+      tags:
+        - Misc
+      summary: Listar cursos por su categoria
+      description: Lista los cursos segun su categoria
+      operationId: Consulta_Categoria
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Consulta_Categoria_Request'
+            example:
+              categoria: Videos cortos
+        required: true
+        x-send-file-in-body: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /update:
+    post:
+      tags:
+        - Misc
+      summary: Actualizar informacion de un curso en especifico
+      description: Actualiza toda la informacion de un curso
+      operationId: Update
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRequest'
+            example:
+              idCurso: '2'
+              nombre: Fisica Moderna
+              categoria: Videos cortos
+              duracion: 25
+              nombreProfesor: Luis Guillermo
+              calificacion: 4.8
+        required: true
+        x-send-file-in-body: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /updatestars:
+    post:
+      tags:
+        - Misc
+      summary: Actualizar la calificacion de un curso en especifico
+      description: Actualiza la calificacion de un curso determinado
+      operationId: Update_Stars
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Update_Stars_Request'
+            example:
+              idCurso: 2
+              calificacion: 3
+        required: true
+        x-send-file-in-body: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    Create_Curso_Request:
+      title: Create_Curso_Request
+      required:
+        - nombre
+        - categoria
+        - duracion
+        - nombreProfesor
+        - calificacion
+      type: object
+      properties:
+        nombre:
+          type: string
+        categoria:
+          type: string
+        duracion:
+          type: integer
+          format: int32
+        nombreProfesor:
+          type: string
+        calificacion:
+          type: number
+      example:
+        nombre: Fisica
+        categoria: Videos cortos
+        duracion: 25
+        nombreProfesor: Juan Carlos
+        calificacion: 4.2
+    Consulta_Categoria_Request:
+      title: Consulta_Categoria_Request
+      required:
+        - categoria
+      type: object
+      properties:
+        categoria:
+          type: string
+      example:
+        categoria: Videos cortos
+    UpdateRequest:
+      title: UpdateRequest
+      required:
+        - idCurso
+        - nombre
+        - categoria
+        - duracion
+        - nombreProfesor
+        - calificacion
+      type: object
+      properties:
+        idCurso:
+          type: string
+        nombre:
+          type: string
+        categoria:
+          type: string
+        duracion:
+          type: integer
+          format: int32
+        nombreProfesor:
+          type: string
+        calificacion:
+          type: number
+      example:
+        idCurso: '2'
+        nombre: Fisica Moderna
+        categoria: Videos cortos
+        duracion: 25
+        nombreProfesor: Luis Guillermo
+        calificacion: 4.8
+    Update_Stars_Request:
+      title: Update_Stars_Request
+      required:
+        - idCurso
+        - calificacion
+      type: object
+      properties:
+        idCurso:
+          type: integer
+          format: int32
+        calificacion:
+          type: integer
+          format: int32
+      example:
+        idCurso: 2
+        calificacion: 3
+tags:
+  - name: Misc
+    description: ''
