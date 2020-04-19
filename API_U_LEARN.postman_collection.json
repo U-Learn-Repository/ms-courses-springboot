@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nombre\": \"Fisica\",\n\t\"categoria\":\"Videos cortos\",\n\t\"duracion\":25,\n\t\"nombreProfesor\":\"Juan Carlos\",\n\t\"calificacion\":4.2\n}",
+					"raw": "{\n\t\"nombre\": \"Programacion\",\n\t\"categoria\":\"Curso basico\",\n\t\"duracion\":40,\n\t\"nombreProfesor\":\"Juan David Gonzales\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\t\n\t\"idCurso\":\"2\",\n\t\"nombre\": \"Fisica Moderna\",\n\t\"categoria\":\"Videos cortos\",\n\t\"duracion\":25,\n\t\"nombreProfesor\":\"Luis Guillermo\",\n\t\"calificacion\":4.8\n}",
+					"raw": "{\t\n\t\"idCurso\":\"2\",\n\t\"nombre\": \"Fisica Moderna\",\n\t\"categoria\":\"Videos cortos\",\n\t\"duracion\":25,\n\t\"nombreProfesor\":\"Luis Guillermo\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,13 +109,38 @@
 			"response": []
 		},
 		{
-			"name": "Update_Stars",
+			"name": "ConsultaID",
 			"request": {
-				"method": "POST",
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/curso/consultaid?cursoid=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"curso",
+						"consultaid"
+					],
+					"query": [
+						{
+							"key": "cursoid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteID",
+			"request": {
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"idCurso\":2,\n\t\"calificacion\":3\n\n}",
+					"raw": "{\n\t\"idCurso\":1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -123,14 +148,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8082/curso/updatestars",
+					"raw": "localhost:8082/curso/eliminarcurso",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
 						"curso",
-						"updatestars"
+						"eliminarcurso"
 					]
 				}
 			},
