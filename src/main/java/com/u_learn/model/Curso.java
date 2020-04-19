@@ -30,6 +30,4 @@ public class Curso {
 	private String duracion;
 	@Column(name = "nombre_profesor")
 	private String nombreProfesor;
-	@Column(name = "calificacion")
-	private String calificacion;
 }

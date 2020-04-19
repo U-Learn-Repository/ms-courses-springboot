@@ -33,4 +33,8 @@ public class CursoService {
 	public List<Curso> listarCurso(){
 		return cursoRepository.listarCursos();
 	}
+	
+	public void deleteCurso(String idCurso) {
+		cursoRepository.deleteCurso(idCurso);
+	}
 }
