@@ -3,7 +3,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://postgres:5432/u_learn
     username: postgres
-    password: root123
+    password: root
     continueOnError: true
   flyway:
     baselineOnMigrate: true
@@ -20,7 +20,7 @@ spring:
           lob:
             non_contextual_creation: true
 server:
-  port: 8082
+  port: 6667
 management:
   endpoints:
     web:

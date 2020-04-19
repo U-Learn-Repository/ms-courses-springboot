@@ -1,6 +1,6 @@
 
 
-CREATE TABLE IF NOT EXISTS "u_learn"."public"."curso"(
+CREATE TABLE IF NOT EXISTS "curso"(
     "id_curso" SERIAL       NOT NULL,
   PRIMARY KEY ("id_curso"),
     "nombre" character varying(500) NOT NULL,
