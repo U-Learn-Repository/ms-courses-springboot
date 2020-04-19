@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS "curso"(
     "categoria" character varying(100) NOT NULL,
     "duracion" character varying(100) NOT NULL,
     "nombre_profesor" character varying(100) NOT NULL,
-    "calificacion" character varying(100)
 );
 
 

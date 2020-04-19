@@ -11,8 +11,7 @@ CREATE TABLE IF NOT EXISTS "curso"(
     "nombre" character varying(500) NOT NULL,
     "categoria" character varying(100) NOT NULL,
     "duracion" character varying(100) NOT NULL,
-    "nombre_profesor" character varying(100) NOT NULL,
-    "calificacion" character varying(100)
+    "nombre_profesor" character varying(100) NOT NULL
 );
 
 \conninfo
