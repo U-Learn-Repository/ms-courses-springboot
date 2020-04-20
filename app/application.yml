@@ -20,9 +20,5 @@ spring:
           lob:
             non_contextual_creation: true
 server:
-  port: 6667
-management:
-  endpoints:
-    web:
-      exposure:
-        include: info,health
+  port: 8082
+
