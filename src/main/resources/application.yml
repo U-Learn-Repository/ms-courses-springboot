@@ -1,4 +1,9 @@
 spring:
+  main:
+        log-startup-info: false
+  output:
+        ansi:
+            enabled: always
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/u_learn
