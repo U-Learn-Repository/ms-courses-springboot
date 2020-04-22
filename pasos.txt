@@ -14,6 +14,6 @@ CREATE TABLE IF NOT EXISTS "curso"(
 );
 
 \conninfo
-
+\q
 docker-compose down
 docker-compose up --build
