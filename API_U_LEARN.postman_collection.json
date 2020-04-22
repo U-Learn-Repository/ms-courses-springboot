@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nombre\": \"Programacion\",\n\t\"categoria\":\"Curso basico\",\n\t\"duracion\":40,\n\t\"nombreProfesor\":\"Juan David Gonzales\"\n}",
+					"raw": "{\n\t\"nombre\": \"Programda2cwdion\",\n\t\"categoria\":\"DAD\",\n\t\"duracion\":40,\n\t\"nombreProfesor\":\"Juan David Gonzales\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,11 +20,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8082/curso/registro",
+					"raw": "localhost:6667/curso/registro",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "6667",
 					"path": [
 						"curso",
 						"registro"
@@ -39,11 +39,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8082/curso/consulta",
+					"raw": "localhost:6667/curso/consulta",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "6667",
 					"path": [
 						"curso",
 						"consulta"
@@ -114,11 +114,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8082/curso/consultaid?cursoid=1",
+					"raw": "localhost:6667/curso/consultaid?cursoid=2",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "6667",
 					"path": [
 						"curso",
 						"consultaid"
@@ -126,7 +126,7 @@
 					"query": [
 						{
 							"key": "cursoid",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}
@@ -138,17 +138,8 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"idCurso\":1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "localhost:8082/curso/eliminarcurso",
+					"raw": "localhost:8082/curso/eliminarcurso?cursoid=1",
 					"host": [
 						"localhost"
 					],
@@ -156,6 +147,12 @@
 					"path": [
 						"curso",
 						"eliminarcurso"
+					],
+					"query": [
+						{
+							"key": "cursoid",
+							"value": "1"
+						}
 					]
 				}
 			},

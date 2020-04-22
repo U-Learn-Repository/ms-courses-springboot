@@ -11,7 +11,7 @@ import com.u_learn.model.Curso;
 
 public interface CursoRepository extends JpaRepository<Curso, Integer>{
 	Curso findByIdCurso(Integer idCurso);
-	Curso  findByCategoria(String categoria);
+	List<Curso>  findByCategoria(String categoria);
 	Curso  findByNombre(String nombre);	
 
 	@Query("select a from Curso a")
@@ -19,5 +19,5 @@ public interface CursoRepository extends JpaRepository<Curso, Integer>{
 	
 	@Modifying
 	@Query("delete from Curso b where b.idCurso=:idCurso")
-	void deleteCurso(@Param("idCurso") String idCurso);
+	void deleteCurso(@Param("idCurso") Integer idCurso);
 }

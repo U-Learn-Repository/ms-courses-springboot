@@ -23,7 +23,7 @@ public class CursoService {
 		return cursoRepository.findByIdCurso(idCurso);
 	}
 	
-	public Curso findByCategoria(String categoria) {
+	public List<Curso> findByCategoria(String categoria) {
 		return cursoRepository.findByCategoria(categoria);
 	}
 	public Curso findByNombre(String nombre) {
@@ -34,7 +34,7 @@ public class CursoService {
 		return cursoRepository.listarCursos();
 	}
 	
-	public void deleteCurso(String idCurso) {
+	public void deleteCurso(Integer idCurso) {
 		cursoRepository.deleteCurso(idCurso);
 	}
 }

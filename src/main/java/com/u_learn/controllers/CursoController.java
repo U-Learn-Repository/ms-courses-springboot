@@ -1,6 +1,8 @@
 package com.u_learn.controllers;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -58,12 +60,12 @@ public class CursoController {
 	
 	@PostMapping( value = {"curso/consultacategoria"})
 	public ResponseEntity consultaTipoBicicleta(@RequestBody CursoPOJO cursoPOJO) {
-		Curso existingCurso = cursoService.findByCategoria(cursoPOJO.getCategoria().toUpperCase());
+		List<Curso> existingCurso = cursoService.findByCategoria(cursoPOJO.getCategoria().toUpperCase());
 		if (existingCurso == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 		
-		return new ResponseEntity<>(existingCurso , HttpStatus.ACCEPTED);
+		return new ResponseEntity<List<Curso>>(existingCurso , HttpStatus.ACCEPTED);
 	}
 	@PostMapping( value = {"curso/update"})
 	public ResponseEntity updateCurso(@RequestBody CursoPOJO cursoPOJO) {
@@ -78,13 +80,14 @@ public class CursoController {
 		existingCurso.setNombreProfesor(cursoPOJO.getNombreProfesor().toUpperCase());
 		cursoService.save(existingCurso);return new ResponseEntity(HttpStatus.CREATED);
 	}
-	
+	@Transactional 
 	@DeleteMapping( value = {"curso/eliminarcurso"})
-	public ResponseEntity deleteTipoBicicleta(@RequestBody CursoPOJO cursoPOJO) {
-		Curso existingCurso = cursoService.findCursoById(cursoPOJO.getIdCurso());
+	public ResponseEntity deleteCursoId(@RequestParam Integer cursoid) {
+		Curso existingCurso = cursoService.findCursoById(cursoid);
 		if (existingCurso == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
+		cursoService.deleteCurso(cursoid);
 		return new ResponseEntity<>(existingCurso.getNombre()+ " eliminado." , HttpStatus.ACCEPTED);
 	}
 	
