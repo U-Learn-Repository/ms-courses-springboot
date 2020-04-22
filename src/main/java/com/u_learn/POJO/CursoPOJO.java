@@ -10,6 +10,6 @@ public class CursoPOJO {
 	private String nombre;
 	private String categoria;
 	private String duracion;
-	private String nombreProfesor;
+	private Integer idProfesor;
 	private String calificacion;
 }

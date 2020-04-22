@@ -37,7 +37,7 @@ public class CursoController {
 		newCurc.setNombre(cursoPOJO.getNombre().toUpperCase());
 		newCurc.setCategoria(cursoPOJO.getCategoria().toUpperCase());
 		newCurc.setDuracion(cursoPOJO.getDuracion());
-		newCurc.setNombreProfesor(cursoPOJO.getNombreProfesor().toUpperCase());
+		newCurc.setIdProfesor(cursoPOJO.getIdProfesor());
 		cursoService.save(newCurc);
 		return new ResponseEntity(HttpStatus.CREATED); 
 		
@@ -77,7 +77,7 @@ public class CursoController {
 		existingCurso.setNombre(cursoPOJO.getNombre().toUpperCase());
 		existingCurso.setCategoria(cursoPOJO.getCategoria().toUpperCase());
 		existingCurso.setDuracion(cursoPOJO.getDuracion());
-		existingCurso.setNombreProfesor(cursoPOJO.getNombreProfesor().toUpperCase());
+		existingCurso.setIdProfesor(cursoPOJO.getIdProfesor());
 		cursoService.save(existingCurso);return new ResponseEntity(HttpStatus.CREATED);
 	}
 	@Transactional 
