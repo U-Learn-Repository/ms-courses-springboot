@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nombre\": \"Programda2cwdion\",\n\t\"categoria\":\"DAD\",\n\t\"duracion\":40,\n\t\"nombreProfesor\":\"Juan David Gonzales\"\n}",
+					"raw": "{\n\t\"nombre\": \"Programda2cwdion\",\n\t\"categoria\":\"DAD\",\n\t\"duracion\":40,\n\t\"idProfesor\":1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,11 +39,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:6667/curso/consulta",
+					"raw": "localhost:8082/curso/consulta",
 					"host": [
 						"localhost"
 					],
-					"port": "6667",
+					"port": "8082",
 					"path": [
 						"curso",
 						"consulta"
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\t\n\t\"idCurso\":\"2\",\n\t\"nombre\": \"Fisica Moderna\",\n\t\"categoria\":\"Videos cortos\",\n\t\"duracion\":25,\n\t\"nombreProfesor\":\"Luis Guillermo\"\n}",
+					"raw": "{\t\n\t\"idCurso\":\"1\",\n\t\"nombre\": \"Fisica Moderna\",\n\t\"categoria\":\"Videos cortos\",\n\t\"duracion\":25,\n\t\"idProfesor\":3\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -114,11 +114,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:6667/curso/consultaid?cursoid=2",
+					"raw": "localhost:8082/curso/consultaid?cursoid=1",
 					"host": [
 						"localhost"
 					],
-					"port": "6667",
+					"port": "8082",
 					"path": [
 						"curso",
 						"consultaid"
@@ -126,7 +126,7 @@
 					"query": [
 						{
 							"key": "cursoid",
-							"value": "2"
+							"value": "1"
 						}
 					]
 				}
