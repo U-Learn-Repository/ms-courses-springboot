@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ULearn_cursos_db:5432/ulearn_cursos_db
+    url: jdbc:postgresql://postgres:5432/ulearn_cursos_db
     username: postgres
     password: root
     continueOnError: true
@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-     ddl-auto: create-drop
+      ddl-auto: create-drop
     database: POSTGRESQL
     show-sql: true
     properties:

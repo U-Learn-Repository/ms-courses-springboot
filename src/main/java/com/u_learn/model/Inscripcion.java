@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,9 +14,13 @@ import lombok.Setter;
 @Table(name = "inscripcion")
 @Getter
 @Setter
+@IdClass(InscripcionIdentity.class)
 public class Inscripcion {
-    @EmbeddedId
-    private InscripcionIdentity inscripcionIdentity;
+    @Id
+    private Integer idCurso;
+
+    @Id
+    private Integer idEstudiante;
 
     @Column(name = "calificacion")
     private String calificacion;
