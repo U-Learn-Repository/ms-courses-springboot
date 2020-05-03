@@ -5,8 +5,6 @@ services:
     image: postgres:latest
     network_mode: bridge
     container_name: ULearn_cursos_db
-    #volumes:
-    #  - postgres-data:/var/lib/postgresql/data
     expose:
       - "6666"
     ports:
@@ -34,5 +32,3 @@ services:
       - postgres
     links:
       - postgres
-#volumes:
-  #postgres-data:

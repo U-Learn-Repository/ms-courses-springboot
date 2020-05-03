@@ -43,9 +43,8 @@ public class InscripcionController {
 
         inscripcion = new Inscripcion();
         InscripcionIdentity identity = new InscripcionIdentity();
-        identity.setIdEstudiante(pojo.getIdEstudiante());
-        identity.setIdCurso(pojo.getIdCurso());
-        //inscripcion.setInscripcionIdentity(identity);
+        inscripcion.setIdEstudiante(pojo.getIdEstudiante());
+        inscripcion.setIdCurso(pojo.getIdCurso());
         inscripcion.setCalificacion("");
         inscripcionService.save(inscripcion);
         return new ResponseEntity<>(HttpStatus.CREATED);
