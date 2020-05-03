@@ -1,8 +1,7 @@
 version: "3"
 services:
   postgres:
-    #build: postgres/
-    image: postgres:latest
+    image: postgres:alpine
     network_mode: bridge
     container_name: ULearn_cursos_db
     expose:
