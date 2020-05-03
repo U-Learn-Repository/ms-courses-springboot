@@ -23,4 +23,10 @@ public class Inscripcion {
 
     @Column(name = "calificacion")
     private String calificacion;
+
+    @Override
+    public String toString() {
+        return "Inscripcion [idCurso=" + idCurso + ", idEstudiante=" + idEstudiante + ", calificacion=" + calificacion
+                + "]";
+    }    
 }

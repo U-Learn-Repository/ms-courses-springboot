@@ -71,7 +71,7 @@ public class InscripcionController {
     @PutMapping()
     public ResponseEntity actualizarInscripcion(@RequestBody InscripcionPOJO pojo) {
         Inscripcion inscripcion = inscripcionService.findInscripcion(pojo.getIdCurso(), pojo.getIdEstudiante());
-        if (inscripcion != null) {
+        if (inscripcion == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         inscripcion.setCalificacion(pojo.getCalificacion());
@@ -84,7 +84,7 @@ public class InscripcionController {
     @DeleteMapping()
     public ResponseEntity eliminarInscripcion(@RequestBody InscripcionPOJO pojo) {
         Inscripcion inscripcion = inscripcionService.findInscripcion(pojo.getIdCurso(), pojo.getIdEstudiante());
-        if (inscripcion != null) {
+        if (inscripcion == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         inscripcionService.deleteInscripcion(pojo.getIdCurso(), pojo.getIdEstudiante());

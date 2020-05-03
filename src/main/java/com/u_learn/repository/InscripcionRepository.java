@@ -19,11 +19,6 @@ public interface InscripcionRepository extends JpaRepository<Inscripcion, Inscri
     List<Inscripcion> listarInscripciones();
 
     @Modifying
-    @Query("update Inscripcion b set b.calificacion=:calificacion where b.idCurso=:idCurso and b.idEstudiante=:idEstudiante")
-    void updateInscripcion(@Param("idCurso") Integer idCurso, @Param("idEstudiante") Integer idEstudiante,
-            @Param("calificacion") String calificacion);
-
-    @Modifying
     @Query("delete from Inscripcion b where b.idCurso=:idCurso and b.idEstudiante=:idEstudiante")
     void deleteInscripcion(@Param("idCurso") Integer idCurso, @Param("idEstudiante") Integer idEstudiante);
 }
