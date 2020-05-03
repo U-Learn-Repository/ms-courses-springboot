@@ -24,7 +24,7 @@ import com.u_learn.service.InscripcionService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("cursos/informacion")
+@RequestMapping("inscripcion")
 public class InscripcionController {
     private InscripcionService inscripcionService;
 
@@ -34,10 +34,10 @@ public class InscripcionController {
 
     @Transactional
     @PostMapping()
-    public ResponseEntity registroCurso(@RequestBody InscripcionPOJO pojo) {
+    public ResponseEntity registroInscripcion(@RequestBody InscripcionPOJO pojo) {
         Inscripcion inscripcion = inscripcionService.findInscripcion(pojo.getIdCurso(), pojo.getIdEstudiante());
 
-        if (inscripcion != null) {
+        if (inscripcion instanceof Inscripcion) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
@@ -52,7 +52,8 @@ public class InscripcionController {
     }
 
     @GetMapping()
-    public ResponseEntity consultaCurso(@RequestParam Integer idCurso, @RequestParam Integer idEstudiante) {
+    public ResponseEntity consultaInscripcion(@RequestParam(value = "idCurso", required = false) Integer idCurso,
+            @RequestParam(value = "idEstudiante", required = false) Integer idEstudiante) {
         List<Inscripcion> inscripcionList;
         if (idCurso instanceof Integer && idEstudiante instanceof Integer) {
             inscripcionList = Arrays.asList(inscripcionService.findInscripcion(idCurso, idEstudiante));
@@ -68,7 +69,7 @@ public class InscripcionController {
 
     @Transactional
     @PutMapping()
-    public ResponseEntity getCurso(@RequestBody InscripcionPOJO pojo) {
+    public ResponseEntity actualizarInscripcion(@RequestBody InscripcionPOJO pojo) {
         Inscripcion inscripcion = inscripcionService.findInscripcion(pojo.getIdCurso(), pojo.getIdEstudiante());
         if (inscripcion != null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -81,7 +82,7 @@ public class InscripcionController {
 
     @Transactional
     @DeleteMapping()
-    public ResponseEntity consultaTipoBicicleta(@RequestBody InscripcionPOJO pojo) {
+    public ResponseEntity eliminarInscripcion(@RequestBody InscripcionPOJO pojo) {
         Inscripcion inscripcion = inscripcionService.findInscripcion(pojo.getIdCurso(), pojo.getIdEstudiante());
         if (inscripcion != null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
