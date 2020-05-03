@@ -44,6 +44,10 @@ public class InscripcionService {
         return inscripcionRepository.listarInscripciones();
     }
 
+    public void updateInscripcion(Integer idCurso, Integer idEstudiante, String calificacion) {
+        inscripcionRepository.updateInscripcion(idCurso, idEstudiante, calificacion);
+    }
+    
     public void deleteInscripcion(Integer idCurso, Integer idEstudiante) {
         inscripcionRepository.deleteInscripcion(idCurso, idEstudiante);
     }
