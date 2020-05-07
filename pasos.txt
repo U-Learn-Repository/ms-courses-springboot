@@ -1,6 +1,7 @@
 docker-compose up -d
 docker exec -it ULearn_cursos_db psql -U postgres
 ALTER  USER postgres  WITH PASSWORD 'root';
+drop database ulearn_cursos_db;
 create database ulearn_cursos_db;
 \c ulearn_cursos_db
 
