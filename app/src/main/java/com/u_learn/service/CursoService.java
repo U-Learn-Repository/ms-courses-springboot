@@ -22,7 +22,9 @@ public class CursoService {
 	public Curso findCursoById(Integer idCurso) {
 		return cursoRepository.findByIdCurso(idCurso);
 	}
-	
+	public List<Curso> findCursoByProfesor(Integer idProfesor) {
+		return cursoRepository.findByIdProfesor(idProfesor);
+	}
 	public List<Curso> findByCategoria(String categoria) {
 		return cursoRepository.findByCategoria(categoria);
 	}

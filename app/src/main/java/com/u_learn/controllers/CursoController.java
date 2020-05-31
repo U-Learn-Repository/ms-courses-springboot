@@ -57,6 +57,15 @@ public class CursoController {
 		return new ResponseEntity<>(cursoService.findCursoById(cursoid)  , HttpStatus.ACCEPTED);
 
 	}
+	@GetMapping( value = {"curso/consultaprofesor"})
+	public ResponseEntity consultaProfesor(@RequestParam Integer idProfesor) {
+		List<Curso> existingCurso = cursoService.findCursoByProfesor(idProfesor);
+		if (existingCurso == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
+		return new ResponseEntity<List<Curso>>(existingCurso , HttpStatus.ACCEPTED);
+	}
 	
 	@PostMapping( value = {"curso/consultacategoria"})
 	public ResponseEntity consultaTipoBicicleta(@RequestBody CursoPOJO cursoPOJO) {
