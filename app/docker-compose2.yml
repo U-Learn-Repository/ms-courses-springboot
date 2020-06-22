@@ -1,0 +1,15 @@
+version: "3"
+services:
+   # APP*****************************************
+  springbootapp:
+    build: app/.
+    image: springbootapp:latest
+    network_mode: bridge
+    container_name: ULearn_cursos_ms
+    environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://172.31.55.28:30005/ulearn
+    expose:
+      - "6667"
+    ports:
+      - "6667:8082"
+    restart: unless-stopped

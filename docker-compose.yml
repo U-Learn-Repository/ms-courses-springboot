@@ -1,33 +1,20 @@
 version: "3"
 services:
   postgres:
-    image: postgres:alpine
+    build: postgres/
+    image: postgres:latest
     network_mode: bridge
-    container_name: ULearn_cursos_db
+    container_name: postgres
+
     expose:
-      - "6666"
+      - 6666
     ports:
-      - "6666:5432"
+      - 6666:5432
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=ulearn
+      - POSTGRES_DB=u_learn
     restart: always
     stop_grace_period: 120s
   # APP*****************************************
-  springbootapp:
-    build: app/.
-    image: springbootapp:latest
-    network_mode: bridge
-    container_name: ULearn_cursos_ms
-    environment:
-        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ulearn
-    expose:
-      - "6667"
-    ports:
-      - "6667:8082"
-    restart: unless-stopped
-    depends_on:
-      - postgres
-    links:
-      - postgres
+  

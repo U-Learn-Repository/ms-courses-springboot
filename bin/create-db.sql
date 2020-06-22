@@ -1,5 +1,4 @@
 
-
 CREATE TABLE IF NOT EXISTS "u_learn"."public"."curso"(
     "id_curso" SERIAL       NOT NULL,
   PRIMARY KEY ("id_curso"),

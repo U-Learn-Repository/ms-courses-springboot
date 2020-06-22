@@ -1,0 +1,15 @@
+version: "3"
+services:
+  
+  # APP*****************************************
+  springbootapp:
+    build: .
+    image: springbootapp:latest
+    network_mode: bridge
+    container_name: springbootapp
+
+    expose:
+      - 6667
+    ports:
+      - 6667:8082
+    restart: unless-stopped
