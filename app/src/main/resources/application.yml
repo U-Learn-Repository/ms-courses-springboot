@@ -6,7 +6,7 @@ spring:
             enabled: always
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2:5432/u_learn
+    url: jdbc:postgresql://10.128.0.3:30000/u_learn
     username: postgres
     password: root
     continueOnError: true

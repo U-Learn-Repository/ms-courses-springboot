@@ -1,16 +1,21 @@
 spring:
+  main:
+        log-startup-info: false
+  output:
+        ansi:
+            enabled: always
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgres:5432/u_learn
+    url: jdbc:postgresql://10.128.0.3:30000/u_learn
     username: postgres
-    password: root123
+    password: root
     continueOnError: true
   flyway:
     baselineOnMigrate: true
 
   jpa:
     hibernate:
-     ddl-auto: validate
+     ddl-auto: create-drop
     database: POSTGRESQL
     show-sql: true
     properties:
